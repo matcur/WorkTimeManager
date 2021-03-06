@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace WorkTimeManager.Core
 {
-    class RelayCommand : ICommand
+    public class RelayCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
         

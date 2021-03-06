@@ -6,7 +6,7 @@ using WorkTimeManager.Models;
 
 namespace WorkTimeManager.ViewModels
 {
-    class NewEmployeeViewModel : ViewModel
+    public class NewEmployeeViewModel : ViewModel
     {
         public Employee NewEmployee { get; private set; }
 

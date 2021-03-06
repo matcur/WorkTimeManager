@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WorkTimeManager.Models;
+using WorkTimeManager.ViewModels;
 
 namespace WorkTimeManager.Views.Pages
 {
@@ -19,12 +20,10 @@ namespace WorkTimeManager.Views.Pages
     /// </summary>
     public partial class WorkTimePage : Page
     {
-        public List<Employee> Employees { get; }
-        
-        public WorkTimePage(List<Employee> employees)
+        public WorkTimePage(IEnumerable<Employee> employees)
         {
+            DataContext = new WorkTimeViewModel(employees, new List<WorkTime>());
             InitializeComponent();
-            Employees = employees;
         }
     }
 }

@@ -13,6 +13,6 @@ namespace WorkTimeManager.Models
 
         public DateTime ReportAt { get; set; }
 
-        public TimeSpan Amount { get; set; }
+        public long Amount { get; set; }
     }
 }

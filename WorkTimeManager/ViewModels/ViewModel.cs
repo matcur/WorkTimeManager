@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WorkTimeManager.ViewModels
 {
-    abstract class ViewModel : INotifyPropertyChanged
+    public abstract class ViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
