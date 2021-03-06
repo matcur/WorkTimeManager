@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WorkTimeManager.Core;
+using WorkTimeManager.Models;
 
 namespace WorkTimeManager.Views.Pages
 {
@@ -20,6 +22,13 @@ namespace WorkTimeManager.Views.Pages
     {
         private readonly Func<object, bool> navigator;
 
+        private readonly List<Employee> employees = new List<Employee> 
+        {
+            new Employee{ FirstName = "Jhon", LastName = "Wizard", SalaryType = SalaryType.Day },
+            new Employee{ FirstName = "Liza", LastName = "Wizard", SalaryType = SalaryType.Day },
+            new Employee{ FirstName = "Jhon - 2", LastName = "Wizard - 1", SalaryType = SalaryType.Day },
+        };
+
         public HomePage(Func<object, bool> navigator)
         {
             InitializeComponent();
@@ -28,17 +37,17 @@ namespace WorkTimeManager.Views.Pages
 
         private void NavigateToEmployees(object sender, MouseButtonEventArgs e)
         {
-            navigator.Invoke(new EmployeesPage());
+            navigator.Invoke(new EmployeesPage(employees));
         }
 
         private void NavigateToWorkTime(object sender, MouseButtonEventArgs e)
         {
-            navigator.Invoke(new WorkTimePage());
+            navigator.Invoke(new WorkTimePage(employees));
         }
 
         private void NavigateToNewEmployee(object sender, MouseButtonEventArgs e)
         {
-            navigator.Invoke(new NewEmployeePage());
+            navigator.Invoke(new NewEmployeePage(employees));
         }
     }
 }

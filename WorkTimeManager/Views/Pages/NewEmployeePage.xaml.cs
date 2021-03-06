@@ -20,11 +20,11 @@ namespace WorkTimeManager.Views.Pages
     /// </summary>
     public partial class NewEmployeePage : Page
     {
-        public NewEmployeePage()
+        public NewEmployeePage(List<Employee> employees)
         {
             InitializeComponent();
 
-            DataContext = new NewEmployeeViewModel(new List<Employee>());
+            DataContext = new NewEmployeeViewModel(employees);
         }
     }
 }

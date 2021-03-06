@@ -5,7 +5,7 @@ using WorkTimeManager.Core;
 
 namespace WorkTimeManager.Models
 {
-    class WorkTime
+    public class WorkTime : Model
     {
         public long Id { get; set; }
 

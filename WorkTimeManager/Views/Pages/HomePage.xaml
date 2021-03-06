@@ -17,10 +17,10 @@
         <StackPanel 
             HorizontalAlignment="Center"
             VerticalAlignment="Center">
-            <TextBlock 
+            <TextBlock
                 Text="Employees" 
                 PreviewMouseDown="NavigateToEmployees"/>
-            <TextBlock 
+            <TextBlock
                 Text="Work Time"
                 PreviewMouseDown="NavigateToWorkTime"/>
             <TextBlock 

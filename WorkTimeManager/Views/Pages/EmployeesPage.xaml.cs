@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WorkTimeManager.Models;
 
 namespace WorkTimeManager.Views.Pages
 {
@@ -18,8 +19,12 @@ namespace WorkTimeManager.Views.Pages
     /// </summary>
     public partial class EmployeesPage : Page
     {
-        public EmployeesPage()
+        public List<Employee> Employees { get; }
+
+        public EmployeesPage(List<Employee> employees)
         {
+            DataContext = this;
+            Employees = employees;
             InitializeComponent();
         }
     }
