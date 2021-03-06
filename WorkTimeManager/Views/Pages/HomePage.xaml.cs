@@ -35,5 +35,10 @@ namespace WorkTimeManager.Views.Pages
         {
             navigator.Invoke(new WorkTimePage());
         }
+
+        private void NavigateToNewEmployee(object sender, MouseButtonEventArgs e)
+        {
+            navigator.Invoke(new NewEmployeePage());
+        }
     }
 }

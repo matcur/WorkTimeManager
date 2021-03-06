@@ -1,0 +1,47 @@
+﻿<Page x:Class="WorkTimeManager.Views.Pages.NewEmployeePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WorkTimeManager.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="200"
+      Title="New Employee"
+      Background="White">
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="0 10 0 0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Page.Resources>
+    <Border Margin="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            
+            <StackPanel Grid.Row="0">
+                <TextBlock Text="First Name"/>
+                <TextBox Text="{Binding Path=NewEmployee.FirstName}"/>
+
+                <TextBlock Text="Last Name"/>
+                <TextBox Text="{Binding NewEmployee.LastName, Mode=TwoWay}"/>
+
+                <TextBlock Text="Salary"/>
+                <TextBox Text="{Binding NewEmployee.Salary, Mode=TwoWay}"/>
+
+                <TextBlock Text="Salary Type"/>
+                <ComboBox 
+                    ItemsSource="{Binding Source={StaticResource salaryTypes}}"
+                    SelectedItem="{Binding NewEmployee.SalaryType, Mode=TwoWay}"
+                    SelectedIndex="0"/>
+            </StackPanel>
+
+            <Button 
+                Grid.Row="1"
+                Command="{Binding AddEmployeeCommand}"
+                Content="Add"/>
+        </Grid>
+    </Border>
+</Page>
