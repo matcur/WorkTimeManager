@@ -6,13 +6,18 @@
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-        <ObjectDataProvider 
-            x:Key="salaryTypes"
-            MethodName="GetValues"
-            ObjectType="{x:Type system:Enum}">
-            <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="core:SalaryType"/>
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/HoverBackground.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <ObjectDataProvider 
+                x:Key="salaryTypes"
+                MethodName="GetValues"
+                ObjectType="{x:Type system:Enum}">
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type TypeName="core:SalaryType"/>
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

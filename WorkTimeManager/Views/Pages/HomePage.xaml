@@ -19,13 +19,16 @@
             VerticalAlignment="Center">
             <TextBlock
                 Text="Employees" 
-                PreviewMouseDown="NavigateToEmployees"/>
+                PreviewMouseDown="NavigateToEmployees"
+                Style="{StaticResource DarkHoverBackground}"/>
             <TextBlock
                 Text="Work Time"
-                PreviewMouseDown="NavigateToWorkTime"/>
+                PreviewMouseDown="NavigateToWorkTime"
+                Style="{StaticResource DarkHoverBackground}"/>
             <TextBlock 
                 Text="Add New Employee"
-                PreviewMouseDown="NavigateToNewEmployee"/>
+                PreviewMouseDown="NavigateToNewEmployee"
+                Style="{StaticResource DarkHoverBackground}"/>
         </StackPanel>
     </Grid>
 </Page>
